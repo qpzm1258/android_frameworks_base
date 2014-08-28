@@ -10538,7 +10538,6 @@ package android.hardware {
     method public int getJpegQuality();
     method public int getJpegThumbnailQuality();
     method public android.hardware.Camera.Size getJpegThumbnailSize();
-    method public java.lang.String getPowerMode();
     method public int getMaxExposureCompensation();
     method public int getMaxNumDetectedFaces();
     method public int getMaxNumFocusAreas();
@@ -10548,6 +10547,7 @@ package android.hardware {
     method public int getMinExposureCompensation();
     method public int getPictureFormat();
     method public android.hardware.Camera.Size getPictureSize();
+    method public java.lang.String getPowerMode();
     method public android.hardware.Camera.Size getPreferredPreviewSizeForVideo();
     method public int getPreviewFormat();
     method public void getPreviewFpsRange(int[]);
@@ -13552,6 +13552,26 @@ package android.media.effect {
 
   public abstract interface EffectUpdateListener {
     method public abstract void onEffectUpdated(android.media.effect.Effect, java.lang.Object);
+  }
+
+}
+
+package android.mokee.location {
+
+  public final class PhoneLocation {
+    ctor public PhoneLocation();
+    method public static java.lang.String getCityFromPhone(java.lang.String);
+    method public static java.lang.String getCodeFromPhone(java.lang.String);
+  }
+
+}
+
+package android.mokee.util {
+
+  public class MoKeeUtils {
+    ctor public MoKeeUtils();
+    method public static boolean isChineseLanguage();
+    method public static boolean isTWLanguage();
   }
 
 }
@@ -21797,7 +21817,7 @@ package android.renderscript {
   }
 
   public class BaseObj {
-    method public synchronized void destroy();
+    method public void destroy();
     method public java.lang.String getName();
     method public void setName(java.lang.String);
   }

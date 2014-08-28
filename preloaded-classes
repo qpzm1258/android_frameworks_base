@@ -605,6 +605,7 @@ android.media.ToneGenerator
 android.media.videoeditor.MediaArtistNativeHelper
 android.media.videoeditor.VideoEditorProfile
 android.mokee.location.PhoneLocation
+android.mokee.util.MoKeeUtils
 android.mtp.MtpDatabase
 android.mtp.MtpDevice
 android.mtp.MtpDeviceInfo

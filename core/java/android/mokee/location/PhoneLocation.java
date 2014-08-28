@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 The MoKee Open Source Project
+ * Copyright (C) 2012 - 2014 The MoKee OpenSource Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,8 @@
  */
 
 package android.mokee.location;
+
+import android.text.TextUtils;
 
 public final class PhoneLocation {
 
@@ -60,10 +62,11 @@ public final class PhoneLocation {
     }
 
     public static String getCityFromPhone(String num) {
-	num=(num.replace("-", "")).replace(" ", "");
-        String PhoneLocationStr=getPosFromPhone(num, 1);  		
-        return (null == PhoneLocationStr ? "" : PhoneLocationStr);
-
+        if (TextUtils.isEmpty(num))
+            return "未知号码";
+	num = (num.replace("-", "")).replace(" ", "");
+        String PhoneLocationStr = getPosFromPhone(num, 1);  		
+        return (TextUtils.isEmpty(PhoneLocationStr) ? num : PhoneLocationStr);
     }
 }
 

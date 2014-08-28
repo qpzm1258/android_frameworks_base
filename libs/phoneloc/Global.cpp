@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 The MoKee OpenSource Project
+ * Copyright (C) 2012 - 2014 The MoKee OpenSource Project
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,33 +19,28 @@
 #include <string.h>
 #include "Global.h"
 
-StringNode::StringNode(const char * val,unsigned short cityCode)
-{
+StringNode::StringNode(const char * val,unsigned short cityCode) {
     this->length=strlen(val);
     this->value=new char[this->length+1];
     strcpy(this->value,val);
     this->cityCode = cityCode;
     this->next=NULL;
 }
-StringNode::StringNode()
-{
+StringNode::StringNode() {
     value=NULL;
     length=0;
     next=NULL;
 }
-StringNode::~StringNode()
-{
+StringNode::~StringNode() {
     if(value) delete[] value;
 }
 
-IndexNode::IndexNode()
-{
+IndexNode::IndexNode() {
     NumStart=NumEnd=0;
     Address=NULL;
     next=NULL;
 }
-IndexNode::IndexNode(int ns, int ne, StringNode * ad)
-{
+IndexNode::IndexNode(int ns, int ne, StringNode * ad) {
     NumStart=ns;
     NumEnd=ne;
     Address=ad;
